@@ -1,0 +1,38 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#posts-list article{
+    margin-bottom: 40px;
+}
+
+#posts-list h2 {
+    margin: 13px 0px;
+}
+
+.post-info {
+    margin: 7px 0px;
+}
+
+.jumbotron {
+    margin-bottom: 45px;
+    background-color: #eaf0f4;
+}
+
+.pagination {
+    float: right;
+}
+
+.post-article div {
+    padding: 1px 13px;
+    line-height: 32px;
+}
+
+.comment:nth-child(odd) {
+    background-color: aliceblue;
+    border-radius: 20px 0px;
+}

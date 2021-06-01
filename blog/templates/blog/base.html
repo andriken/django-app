@@ -1,0 +1,156 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'blog/bootstrap.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="{% static 'blog/style.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/flaticon/font/flaticon.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<div class="wrap">
+    <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-9 social">
+                <!--<a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-instagram"></span></a>
+                <a href="#"><span class="fa fa-youtube-play"></span></a>-->
+              </div>
+              <div class="col-3 search-top">
+                <!-- <a href="#"><span class="fa fa-search"></span></a> -->
+                <form action="/" class="search-top-form">
+                  <span class="icon fa fa-search"></span>
+                  <input type="text" id="s" class="form-control" name="search" placeholder="Type keyword to search...">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container logo-wrap">
+          <div class="row pt-5">
+            <div class="col-12 text-center">
+              <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+              <h1 class="site-logo"><a href="index.html">Django Blog</a></h1>
+            </div>
+          </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md  navbar-light bg-light">
+          <div class="container">
+
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/gdpr-privacy-policy">GDPR Privacy Policy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/privacy-policy-and-disclaimer">Privacy Policy and Disclaimer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <h3>About Us</h3>
+              <p class="mb-4">
+                <!--<img src="images/img_1.jpg" alt="Image placeholder" class="img-fluid">-->
+              </p>
+
+              <p>Lorem ipsum dolor sit amet sa ksal sk sa, consectetur adipisicing elit. Ipsa harum inventore reiciendis. <a href="#">Read More</a></p>
+            </div>
+            <div class="col-md-6 ml-auto">
+              <div class="row">
+                <div class="col-md-7">
+                  <h3>Latest Post</h3>
+                  <div class="post-entry-sidebar">
+                      {% show_latest_posts 3 %}
+                  </div>
+                </div>
+                <div class="col-md-1"></div>
+
+                <div class="col-md-4">
+
+                  <div class="mb-5">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                      <li><a href="/gdpr-privacy-policy">GDPR Privacy Policy</a></li>
+                      <li><a href="/privacy-policy-and-disclaimer">Privacy Policy and Disclaimer</a></li>
+                      <li><a href="/contact">Contact</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p class="small">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright © 2021 All Rights Reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib --- Downloaded from </a><a href="https://themeslab.org/" target="_blank">Themeslab</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+</div>
+<script>
+$(document).ready(function(){
+
+  ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Page has started: ${value}.`));
+
+  function ProgressCountdown(timeleft, bar, text) {
+    return new Promise((resolve, reject) => {
+      var countdownTimer = setInterval(() => {
+        timeleft--;
+
+        document.getElementById(bar).value = timeleft;
+        document.getElementById(text).textContent = timeleft;
+
+        if (timeleft <= 0) {
+          clearInterval(countdownTimer);
+          $("#firstlink").show();
+          $("#secondlink").show();
+        }
+      }, 1000);
+    });
+  }
+
+  });
+</script>
+<script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="{% static 'blog/js/popper.min.js' %}"></script>
+<script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'blog/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'blog/js/main.js' %}"></script>
+</body>
+

@@ -1,0 +1,23 @@
+asgiref==3.2.10
+astroid==2.4.2
+certifi==2020.12.5
+colorama==0.4.3
+dj-database-url==0.5.0
+Django==3.0.8
+django-ckeditor==5.9.0
+django-js-asset==1.2.2
+django-taggit==1.2.0
+gunicorn==20.1.0
+isort==4.3.21
+lazy-object-proxy==1.4.3
+Markdown==3.2.1
+mccabe==0.6.1
+Pillow==8.2.0
+psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+pylint==2.5.3
+pytz==2020.1
+six==1.15.0
+sqlparse==0.3.1
+toml==0.10.1
+wincertstore==0.2
+wrapt==1.12.1

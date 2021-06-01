@@ -1,0 +1,16 @@
+<ul>
+    {% for post in latest_posts %}
+          <li>
+            <a href="{{ post.get_absolute_url }}">
+              <img src="{% if post.image %}{{ post.image.url }}{% else %}images/person_1.jpg{% endif %}" alt="Image placeholder" class="mr-4">
+              <div class="text">
+                <h4>{{ post.title }}</h4>
+                <div class="post-meta">
+                  <span class="mr-2">{{ post.publish }}</span> •
+                  <span class="ml-2"><span class="fa fa-comments"></span>{{ post.comments.all.count }}</span>
+                </div>
+              </div>
+            </a>
+          </li>
+    {% endfor %}
+</ul>
