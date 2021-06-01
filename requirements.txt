@@ -13,7 +13,7 @@ lazy-object-proxy==1.4.3
 Markdown==3.2.1
 mccabe==0.6.1
 Pillow==8.2.0
-psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+psycopg2
 pylint==2.5.3
 pytz==2020.1
 six==1.15.0
